@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from flake8_plone_api import __version__
 from setuptools import setup
 
 
@@ -15,7 +14,7 @@ long_description = '{0}\n{1}'.format(
 
 setup(
     name='flake8-plone-api',
-    version=__version__,
+    version='0.1',
     description=short_description,
     long_description=long_description,
     # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
