@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
 from flake8_plone_api import __version__
+from setuptools import setup
 
 
 short_description = \
@@ -18,6 +18,7 @@ setup(
     version=__version__,
     description=short_description,
     long_description=long_description,
+    # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 3 - Alpha',
         "Framework :: Plone",
@@ -32,12 +33,13 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Topic :: Software Development',
     ],
-    author='Gil Forcada Codinachs',
+    keywords='pep8 flake8 plone',
+    author='Gil Forcada',
     author_email='gil.gnome@gmail.com',
     url='https://github.com/gforcada/flake8-plone-api',
-    license='GPL 2.0',
-    keywords='pep8 flake8 plone',
+    license='GPL version 2',
     py_modules=['flake8_plone_api', ],
+    zip_safe=False,
     install_requires=[
         'flake8',
     ],
