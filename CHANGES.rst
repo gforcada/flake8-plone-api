@@ -3,11 +3,10 @@
 Changelog
 =========
 
-0.3 (unreleased)
-----------------
-
-- Nothing changed yet.
-
+0.2.post0 (unreleased)
+----------------------
+- Still not...
+  [gforcada]
 
 0.2 (2015-08-16)
 ----------------
