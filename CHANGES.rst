@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.3 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.2 (2015-08-16)
 ----------------
 - All previous releases are broken, attempting to fix it
