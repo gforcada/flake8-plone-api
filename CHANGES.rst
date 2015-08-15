@@ -3,7 +3,7 @@
 Changelog
 =========
 
-0.1.post1 (unreleased)
+0.1.post1 (2015-08-15)
 ----------------------
 - Minor README enhancement.
   [gforcada]
