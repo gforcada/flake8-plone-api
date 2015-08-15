@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.5 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.4 (2015-08-16)
 ----------------
 - Ignore ``XXX`` old usages, they are mostly a placeholder to keep the mapping
