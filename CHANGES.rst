@@ -3,11 +3,10 @@
 Changelog
 =========
 
-0.2 (unreleased)
-----------------
-
-- Nothing changed yet.
-
+0.1.post1 (unreleased)
+----------------------
+- Minor README enhancement.
+  [gforcada]
 
 0.1.post0 (2015-08-15)
 ----------------------
