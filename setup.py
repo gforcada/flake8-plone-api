@@ -39,6 +39,7 @@ setup(
     license='GPL version 2',
     py_modules=['flake8_plone_api', 'mapping', ],
     include_package_data=True,
+    data_files=['mapping.json'],
     test_suite = 'run_tests',
     zip_safe=False,
     install_requires=[
