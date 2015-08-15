@@ -3,6 +3,7 @@ include LICENSE
 include *.rst
 include *.py
 include *.cfg
+include mapping.json
 exclude .installed.cfg
 exclude .coveragerc
 exclude *.pyc

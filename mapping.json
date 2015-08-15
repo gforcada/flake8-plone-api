@@ -1,0 +1,57 @@
+{
+  "plone.api.content": {
+    "create": ["invokeFactory", "createObject", "createContentInContainer"],
+    "get": ["restrictedTraverse"],
+    "move": ["manage_cutObjects", "manage_pasteObjects"],
+    "rename": ["manage_renameObject"],
+    "copy": ["manage_copyObjects"],
+    "delete": ["manage_delObjects"],
+    "get_state": ["getInfoFor"],
+    "transition": ["doActionFor"],
+    "get_view": ["XXX"],
+    "get_uuid": ["IUUID"],
+    "find": ["catalog", "searchResults" ]
+  },
+  "plone.api.user": {
+    "create": ["addMember"],
+    "get": ["getMemberById", "get_member_by_login_name"],
+    "get_current": ["getAuthenticatedMember"],
+    "get_users": ["listMembers", "getGroupMembers"],
+    "delete": ["deleteMembers"],
+    "is_anonymous": ["isAnonymousUser"],
+    "get_roles": ["getRolesInContext", "getRoles", "get_local_roles_for_userid" ],
+    "get_permissions": ["checkPermission"],
+    "has_permission": ["checkPermission"],
+    "grant_roles": ["setSecurityProfile", "manage_setLocalRoles"],
+    "revoke_roles": ["setSecurityProfile", "manage_setLocalRoles", "manage_delLocalRoles"]
+  },
+  "plone.api.group": {
+    "create": ["addGroup"],
+    "get": ["getGroupById"],
+    "get_groups": ["getGroupsForPrincipal", "listGroups"],
+    "delete": ["removeGroup"],
+    "add_user": ["addPrincipalToGroup"],
+    "remove_user": ["removePrincipalFromGroup"],
+    "get_roles": ["getRoles", "getRolesInContext"],
+    "grant_roles": ["setRolesForGroup", "manage_setLocalRoles" ],
+    "revoke_roles": ["setRolesForGroup", "manage_setLocalRoles", "manage_delLocalRoles"]
+  },
+  "plone.api.portal": {
+    "get": ["getSite"],
+    "get_navigation_root": ["getNavigationRootObject"],
+    "get_tool": ["getToolByName"],
+    "send_email": ["XXX"],
+    "get_localized_time": ["ulocalized_time"],
+    "show_message": ["IStatusMessage"],
+    "get_registry_record": ["IRegistry"],
+    "set_registry_record": ["IRegistry"]
+  },
+  "plone.api.env": {
+    "adopt_user": ["setSecurityManager", "getSecurityManager","newSecurityManager"],
+    "adopt_roles": ["getSecurityManager"],
+    "debug_mode": ["DevelopmentMode"],
+    "test_mode": ["XXX"],
+    "plone_version": ["XXX"],
+    "zope_version": ["XXX"]
+  }
+}
