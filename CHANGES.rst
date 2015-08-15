@@ -5,9 +5,8 @@ Changelog
 
 0.3 (unreleased)
 ----------------
-
-- Nothing changed yet.
-
+- I give up, collapse everything into a single file, shoudl be easy...
+  [gforcada]
 
 0.2.post1 (2015-08-16)
 ----------------------

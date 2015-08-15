@@ -10,7 +10,7 @@ Flake8 Plone API plugin
 =======================
 Checks for code usages that can be replaced with Plone API method calls.
 
-`See the current replacements <https://github.com/gforcada/flake8-plone-api/blob/master/mapping.json>`_
+`See the current replacements (on DATA variable at the bottom) <https://github.com/gforcada/flake8-plone-api/blob/master/flake8_plone_api.py>`_
 and `propose new ones / fix existing ones <https://github.com/gforcada/flake8-plone-api/pulls>`_.
 
 Install

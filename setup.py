@@ -37,15 +37,14 @@ setup(
     author_email='gil.gnome@gmail.com',
     url='https://github.com/gforcada/flake8-plone-api',
     license='GPL version 2',
-    py_modules=['flake8_plone_api', 'mapping', ],
+    py_modules=['flake8_plone_api', ],
     include_package_data=True,
-    data_files=['mapping.json'],
     test_suite = 'run_tests',
     zip_safe=False,
     install_requires=[
         'flake8',
     ],
     entry_points={
-        'flake8.extension': ['P00 = flake8_plone_api:CodingChecker'],
+        'flake8.extension': ['P00 = flake8_plone_api:PloneAPIChecker'],
     },
 )
