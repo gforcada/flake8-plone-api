@@ -49,10 +49,16 @@ class PloneAPIChecker(object):
             for api_method in json_data[module]:
                 method_call = '{0}.{1}'.format(module, api_method)
                 for old_approach in json_data[module][api_method]:
+                    # do not add the XXX entries
+                    if old_approach == 'XXX':
+                        continue
                     mapping[old_approach].append(method_call)
 
         return mapping
 
+
+# note: XXX entries are mostly so that all Plone API methods could be listed,
+# or to note that there has to be more old usages, suggestions welcome.
 DATA = """
 {
   "plone.api.content": {
