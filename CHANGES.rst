@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.2 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.1.post1 (2015-08-15)
 ----------------------
 - Minor README enhancement.
