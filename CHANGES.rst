@@ -5,9 +5,9 @@ Changelog
 
 0.2 (unreleased)
 ----------------
-
-- Nothing changed yet.
-
+- All previous releases are broken, attempting to fix it
+  (setuptools is playing with me).
+  [gforcada]
 
 0.1.post1 (2015-08-15)
 ----------------------
