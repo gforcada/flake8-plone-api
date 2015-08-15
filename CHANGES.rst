@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.3 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.2.post1 (2015-08-16)
 ----------------------
 - Yet another try.
