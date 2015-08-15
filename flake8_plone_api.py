@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from mapping import get_mapping
+
+
 __version__ = '1.1.0'
 
 MAPPING = get_mapping()
