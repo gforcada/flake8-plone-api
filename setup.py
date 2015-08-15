@@ -39,6 +39,7 @@ setup(
     url='https://github.com/gforcada/flake8-plone-api',
     license='GPL version 2',
     py_modules=['flake8_plone_api', ],
+    test_suite = 'run_tests',
     zip_safe=False,
     install_requires=[
         'flake8',
