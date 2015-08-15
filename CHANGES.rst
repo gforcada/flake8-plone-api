@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.4 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.3 (2015-08-16)
 ----------------
 - I give up, collapse everything into a single file, shoudl be easy...
