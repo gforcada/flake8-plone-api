@@ -1,5 +1,11 @@
 .. -*- coding: utf-8 -*-
 
+.. image:: https://travis-ci.org/gforcada/flake8-plone-api.svg?branch=master
+   :target: https://travis-ci.org/gforcada/flake8-plone-api
+
+.. image:: https://coveralls.io/repos/gforcada/flake8-plone-api/badge.png?branch=master
+   :target: https://coveralls.io/r/gforcada/flake8-plone-api?branch=master
+
 Flake8 Plone API plugin
 =======================
 Checks for code usages that can be replaced with Plone API method calls.
