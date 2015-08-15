@@ -5,9 +5,9 @@ Changelog
 
 0.4 (unreleased)
 ----------------
-
-- Nothing changed yet.
-
+- Ignore ``XXX`` old usages, they are mostly a placeholder to keep the mapping
+  easier.
+  [gforcada]
 
 0.3 (2015-08-16)
 ----------------
