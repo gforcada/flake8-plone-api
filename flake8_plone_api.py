@@ -2,7 +2,7 @@
 from mapping import get_mapping
 
 
-__version__ = '1.1.0'
+__version__ = '0.1'
 
 MAPPING = get_mapping()
 
