@@ -3,7 +3,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2015-08-16)
 ----------------
 - All previous releases are broken, attempting to fix it
   (setuptools is playing with me).
