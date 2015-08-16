@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from collections import defaultdict
 
-import json
-
 
 class PloneAPIChecker(object):
     name = 'flake8_plone_api'
@@ -43,78 +41,171 @@ class PloneAPIChecker(object):
         replacements.
         """
         mapping = defaultdict(list)
-        json_data = json.loads(DATA)
 
-        for module in json_data:
-            for api_method in json_data[module]:
-                method_call = '{0}.{1}'.format(module, api_method)
-                for old_approach in json_data[module][api_method]:
-                    # do not add the XXX entries
-                    if old_approach == 'XXX':
-                        continue
-                    mapping[old_approach].append(method_call)
+        for api_method in DATA:
+            method_call = 'plone.api.{0}'.format(api_method)
+            for old_approach in DATA[api_method]:
+                # do not add the empty entries
+                if old_approach is None:
+                    continue
+                mapping[old_approach].append(method_call)
 
         return mapping
 
 
-# note: XXX entries are mostly so that all Plone API methods could be listed,
-# or to note that there has to be more old usages, suggestions welcome.
-DATA = """
-{
-  "plone.api.content": {
-    "create": ["invokeFactory", "createObject", "createContentInContainer"],
-    "get": ["restrictedTraverse"],
-    "move": ["manage_cutObjects", "manage_pasteObjects"],
-    "rename": ["manage_renameObject"],
-    "copy": ["manage_copyObjects"],
-    "delete": ["manage_delObjects"],
-    "get_state": ["getInfoFor"],
-    "transition": ["doActionFor"],
-    "get_view": ["XXX"],
-    "get_uuid": ["IUUID"],
-    "find": ["catalog", "searchResults" ]
-  },
-  "plone.api.user": {
-    "create": ["addMember"],
-    "get": ["getMemberById", "get_member_by_login_name"],
-    "get_current": ["getAuthenticatedMember"],
-    "get_users": ["listMembers", "getGroupMembers"],
-    "delete": ["deleteMembers"],
-    "is_anonymous": ["isAnonymousUser"],
-    "get_roles": ["getRolesInContext", "getRoles", "get_local_roles_for_userid" ],
-    "get_permissions": ["checkPermission"],
-    "has_permission": ["checkPermission"],
-    "grant_roles": ["setSecurityProfile", "manage_setLocalRoles"],
-    "revoke_roles": ["setSecurityProfile", "manage_setLocalRoles", "manage_delLocalRoles"]
-  },
-  "plone.api.group": {
-    "create": ["addGroup"],
-    "get": ["getGroupById"],
-    "get_groups": ["getGroupsForPrincipal", "listGroups"],
-    "delete": ["removeGroup"],
-    "add_user": ["addPrincipalToGroup"],
-    "remove_user": ["removePrincipalFromGroup"],
-    "get_roles": ["getRoles", "getRolesInContext"],
-    "grant_roles": ["setRolesForGroup", "manage_setLocalRoles" ],
-    "revoke_roles": ["setRolesForGroup", "manage_setLocalRoles", "manage_delLocalRoles"]
-  },
-  "plone.api.portal": {
-    "get": ["getSite"],
-    "get_navigation_root": ["getNavigationRootObject"],
-    "get_tool": ["getToolByName"],
-    "send_email": ["XXX"],
-    "get_localized_time": ["ulocalized_time"],
-    "show_message": ["IStatusMessage"],
-    "get_registry_record": ["IRegistry"],
-    "set_registry_record": ["IRegistry"]
-  },
-  "plone.api.env": {
-    "adopt_user": ["setSecurityManager", "getSecurityManager","newSecurityManager"],
-    "adopt_roles": ["getSecurityManager"],
-    "debug_mode": ["DevelopmentMode"],
-    "test_mode": ["XXX"],
-    "plone_version": ["XXX"],
-    "zope_version": ["XXX"]
-  }
+DATA = {
+    'content.create': [
+        'invokeFactory',
+        'createObject',
+        'createContentInContainer',
+    ],
+    'content.get': [
+        'restrictedTraverse',
+    ],
+    'content.move': [
+        'manage_cutObjects',
+        'manage_pasteObjects',
+    ],
+    'content.rename': [
+        'manage_renameObject',
+    ],
+    'content.copy': [
+        'manage_copyObjects',
+    ],
+    'content.delete': [
+        'manage_delObjects',
+    ],
+    'content.get_state': [
+        'getInfoFor',
+    ],
+    'content.transition': [
+        'doActionFor',
+    ],
+    'content.get_view': [
+        None,
+    ],
+    'content.get_uuid': [
+        'IUUID',
+    ],
+    'content.find': [
+        'catalog',
+        'searchResults',
+        None,
+    ],
+    'user.create': [
+        'addMember',
+    ],
+    'user.get': [
+        'getMemberById',
+        'get_member_by_login_name',
+    ],
+    'user.get_current': [
+        'getAuthenticatedMember',
+    ],
+    'user.get_users': [
+        'listMembers',
+        'getGroupMembers',
+    ],
+    'user.delete': [
+        'deleteMembers',
+    ],
+    'user.is_anonymous': [
+        'isAnonymousUser',
+    ],
+    'user.get_roles': [
+        'getRolesInContext',
+        'getRoles',
+        'get_local_roles_for_userid',
+    ],
+    'user.get_permissions': [
+        'checkPermission',
+    ],
+    'user.has_permission': [
+        'checkPermission',
+    ],
+    'user.grant_roles': [
+        'setSecurityProfile',
+        'manage_setLocalRoles',
+    ],
+    'user.revoke_roles': [
+        'setSecurityProfile',
+        'manage_setLocalRoles',
+        'manage_delLocalRoles',
+    ],
+    'group.create': [
+        'addGroup',
+    ],
+    'group.get': [
+        'getGroupById',
+    ],
+    'group.get_groups': [
+        'getGroupsForPrincipal',
+        'listGroups',
+    ],
+    'group.delete': [
+        'removeGroup',
+    ],
+    'group.add_user': [
+        'addPrincipalToGroup',
+    ],
+    'group.remove_user': [
+        'removePrincipalFromGroup',
+    ],
+    'group.get_roles': [
+        'getRoles',
+        'getRolesInContext',
+    ],
+    'group.grant_roles': [
+        'setRolesForGroup',
+        'manage_setLocalRoles',
+    ],
+    'group.revoke_roles': [
+        'setRolesForGroup',
+        'manage_setLocalRoles',
+        'manage_delLocalRoles',
+    ],
+    'portal.get': [
+        'getSite',
+    ],
+    'portal.get_navigation_root': [
+        'getNavigationRootObject',
+    ],
+    'portal.get_tool': [
+        'getToolByName',
+    ],
+    'portal.send_email': [
+        None,
+    ],
+    'portal.get_localized_time': [
+        'ulocalized_time',
+    ],
+    'portal.show_message': [
+        'IStatusMessage',
+    ],
+    'portal.get_registry_record': [
+        'IRegistry',
+    ],
+    'portal.set_registry_record': [
+        'IRegistry',
+    ],
+    'env.adopt_user': [
+        'setSecurityManager',
+        'getSecurityManager',
+        'newSecurityManager',
+    ],
+    'env.adopt_roles': [
+        'getSecurityManager',
+    ],
+    'env.debug_mode': [
+        'DevelopmentMode',
+    ],
+    'env.test_mode': [
+        None,
+    ],
+    'env.plone_version': [
+        None,
+    ],
+    'env.zope_version': [
+        None,
+    ],
 }
-"""
