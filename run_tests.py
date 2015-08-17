@@ -27,9 +27,9 @@ class TestFlake8PloneAPI(unittest.TestCase):
         self.assertEqual(ret[0][1], 22)
         self.assertTrue(ret[0][2].startswith('P001 found '))
 
-    def test_no_replacement_for_xxx(self):
+    def test_no_replacement_for_regular_code(self):
         file_path = self._given_a_file_in_test_dir(
-            'from somewhere import XXX'
+            'from plone import api'
         )
         checker = PloneAPIChecker(None, file_path)
         ret = list(checker.run())
