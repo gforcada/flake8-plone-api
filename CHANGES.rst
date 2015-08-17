@@ -5,10 +5,18 @@ Changelog
 
 0.5 (unreleased)
 ----------------
+- Improve testing so that physical files are no longer needed.
+  [gforcada]
+
+- Remove JSON data, use a regular python dictionary.
+  [gforcada]
+
 - Fix old approach being a substring of another method (getSite and getSiteManager).
   Fixes https://github.com/gforcada/flake8-plone-api/issues/1
   [gforcada]
 
+- Improve test coverage.
+  [gforcada]
 
 0.4 (2015-08-16)
 ----------------
