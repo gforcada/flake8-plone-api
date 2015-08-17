@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 from collections import defaultdict
 
+import re
+
 
 class PloneAPIChecker(object):
     name = 'flake8_plone_api'
     version = '0.1'
     message = 'P001 found "{0}" consider replacing it with: {1}'
+
+    character = re.compile(r'\w')
 
     def __init__(self, tree, filename):
         self.filename = filename
@@ -17,7 +21,7 @@ class PloneAPIChecker(object):
 
             for lineno, line in enumerate(lines, start=1):
                 for old_approach in self.mapping:
-                    found = line.find(old_approach)
+                    found = self.check_line(line, old_approach)
                     if found != -1:
                         msg = self.message.format(
                             old_approach,
@@ -25,6 +29,22 @@ class PloneAPIChecker(object):
                         )
                         yield lineno, found, msg, type(self)
 
+    def check_line(self, line, old_approach):
+        found = line.find(old_approach)
+        if found == -1:
+            return found
+
+        next_character_position = found + len(old_approach) + 1
+        if next_character_position > len(line):
+            return found
+
+        # check that the method is not a substring of another
+        # method, i.e getSite and getSiteManager
+        next_character = line[next_character_position]
+        if self.character.search(next_character) is not None:
+            return -1
+
+        return found
 
     @staticmethod
     def _get_mapping():

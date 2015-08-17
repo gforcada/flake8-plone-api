@@ -5,8 +5,9 @@ Changelog
 
 0.5 (unreleased)
 ----------------
-
-- Nothing changed yet.
+- Fix old approach being a substring of another method (getSite and getSiteManager).
+  Fixes https://github.com/gforcada/flake8-plone-api/issues/1
+  [gforcada]
 
 
 0.4 (2015-08-16)

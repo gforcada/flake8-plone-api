@@ -35,6 +35,17 @@ class TestFlake8PloneAPI(unittest.TestCase):
         ret = list(checker.run())
         self.assertEqual(ret, [])
 
+    def test_replacement_is_substring_of_another_import(self):
+        """One replacement is getSite -> portal.get but getSiteManager exists
+        and gives a false positive.
+        """
+        file_path = self._given_a_file_in_test_dir(
+            'from somewhere import getSiteManager'
+        )
+        checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
+        self.assertEqual(ret, [])
+
 
 if __name__ == '__main__':
     unittest.main()
