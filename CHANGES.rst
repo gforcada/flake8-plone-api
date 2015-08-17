@@ -3,7 +3,7 @@
 Changelog
 =========
 
-0.5 (unreleased)
+0.5 (2015-08-17)
 ----------------
 - Improve testing so that physical files are no longer needed.
   [gforcada]
