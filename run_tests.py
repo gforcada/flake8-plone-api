@@ -27,6 +27,17 @@ class TestFlake8PloneAPI(unittest.TestCase):
         self.assertEqual(ret[0][1], 22)
         self.assertTrue(ret[0][2].startswith('P001 found '))
 
+    def test_get_replacement_nearly_end_of_line(self):
+        file_path = self._given_a_file_in_test_dir(
+            'from somewhere import getToolByName('
+        )
+        checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
+        self.assertEqual(len(ret), 1)
+        self.assertEqual(ret[0][0], 1)
+        self.assertEqual(ret[0][1], 22)
+        self.assertTrue(ret[0][2].startswith('P001 found '))
+
     def test_get_replacement_within_the_line(self):
         file_path = self._given_a_file_in_test_dir(
             'from plone import api\ntool = getToolByName()'

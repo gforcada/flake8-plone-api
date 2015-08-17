@@ -35,7 +35,7 @@ class PloneAPIChecker(object):
             return found
 
         next_character_position = found + len(old_approach) + 1
-        if next_character_position > len(line):
+        if next_character_position >= len(line):
             return found
 
         # check that the method is not a substring of another
