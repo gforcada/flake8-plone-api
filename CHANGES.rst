@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.6 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.5 (2015-08-17)
 ----------------
 - Improve testing so that physical files are no longer needed.
