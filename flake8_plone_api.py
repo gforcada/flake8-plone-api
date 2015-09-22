@@ -108,7 +108,7 @@ DATA = {
         'IUUID',
     ],
     'content.find': [
-        'catalog',
+        '.catalog',
         'searchResults',
         None,
     ],

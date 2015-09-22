@@ -6,7 +6,9 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Instead of looking for catalog, look for .catalog, this
+  should avoid some false positives
+  [do3cc]
 
 
 0.5 (2015-08-17)
