@@ -80,6 +80,14 @@ class TestFlake8PloneAPI(unittest.TestCase):
         ret = list(checker.run())
         self.assertEqual(ret, [])
 
+    def test_catalog_does_not_find_too_much(self):
+        file_path = self._given_a_file_in_test_dir(
+            'self.query_catalog(**query)[:limit]'
+        )
+        checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
+        self.assertEqual(ret, [])
+
 
 if __name__ == '__main__':
     unittest.main()
