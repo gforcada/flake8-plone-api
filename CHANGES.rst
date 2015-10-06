@@ -3,7 +3,7 @@
 Changelog
 =========
 
-0.6 (unreleased)
+0.6 (2015-10-06)
 ----------------
 
 - Instead of looking for catalog, look for .catalog, this
