@@ -34,6 +34,8 @@ class PloneAPIChecker(object):
         if found == -1:
             return found
 
+        # Check if our found term is already at the end of the line.
+        # Then further checks are not necessary
         next_character_position = found + len(old_approach) + 1
         if next_character_position >= len(line):
             return found
@@ -108,7 +110,7 @@ DATA = {
         'IUUID',
     ],
     'content.find': [
-        'catalog',
+        '.catalog',
         'searchResults',
         None,
     ],
