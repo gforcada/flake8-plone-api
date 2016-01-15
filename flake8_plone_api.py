@@ -112,7 +112,6 @@ DATA = {
     'content.find': [
         '.catalog',
         'searchResults',
-        None,
     ],
     'user.create': [
         'addMember',
