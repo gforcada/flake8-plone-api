@@ -78,7 +78,6 @@ class PloneAPIChecker(object):
 DATA = {
     'content.create': [
         'invokeFactory',
-        'createObject',
         'createContentInContainer',
     ],
     'content.get': [
