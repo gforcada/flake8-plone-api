@@ -204,9 +204,11 @@ DATA = {
     ],
     'portal.get_registry_record': [
         'IRegistry(',
+        '.forInterface(',
     ],
     'portal.set_registry_record': [
         'IRegistry(',
+        '.forInterface(',
     ],
     'env.adopt_user': [
         'setSecurityManager(',
