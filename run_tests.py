@@ -16,15 +16,27 @@ class TestFlake8PloneAPI(unittest.TestCase):
 
         return file_path
 
-    def test_get_replacement_end_of_line(self):
+    def test_no_error_on_imports(self):
         file_path = self._given_a_file_in_test_dir(
             'from somewhere import getToolByName'
         )
         checker = PloneAPIChecker(None, file_path)
         ret = list(checker.run())
+        self.assertEqual(len(ret), 0)
+
+    def test_get_replacement_end_of_line(self):
+        file_path = self._given_a_file_in_test_dir(
+            'from somewhere import getToolByName\n'
+            '\n'
+            'getToolByName(\n'
+            '    3\n'
+            ')\n'
+        )
+        checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
         self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0][0], 1)
-        self.assertEqual(ret[0][1], 22)
+        self.assertEqual(ret[0][0], 3)
+        self.assertEqual(ret[0][1], 0)
         self.assertTrue(ret[0][2].startswith('P001 found '))
 
     def test_get_replacement_nearly_end_of_line(self):
@@ -51,13 +63,15 @@ class TestFlake8PloneAPI(unittest.TestCase):
 
     def test_get_multiple_replacement_options(self):
         file_path = self._given_a_file_in_test_dir(
-            'from plone import checkPermission'
+            'from plone import checkPermission\n'
+            '\n'
+            'checkPermission(3)\n'
         )
         checker = PloneAPIChecker(None, file_path)
         ret = list(checker.run())
         self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0][0], 1)
-        self.assertEqual(ret[0][1], 18)
+        self.assertEqual(ret[0][0], 3)
+        self.assertEqual(ret[0][1], 0)
         self.assertTrue(ret[0][2].startswith('P001 found '))
         self.assertNotEqual(ret[0][2].find(' or '), -1)
 

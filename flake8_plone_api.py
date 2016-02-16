@@ -77,147 +77,147 @@ class PloneAPIChecker(object):
 
 DATA = {
     'content.create': [
-        'invokeFactory',
-        'createContentInContainer',
+        'invokeFactory(',
+        'createContentInContainer(',
     ],
     'content.get': [
-        'restrictedTraverse',
+        'restrictedTraverse(',
     ],
     'content.move': [
-        'manage_cutObjects',
-        'manage_pasteObjects',
+        'manage_cutObjects(',
+        'manage_pasteObjects(',
     ],
     'content.rename': [
-        'manage_renameObject',
+        'manage_renameObject(',
     ],
     'content.copy': [
-        'manage_copyObjects',
+        'manage_copyObjects(',
     ],
     'content.delete': [
-        'manage_delObjects',
+        'manage_delObjects(',
     ],
     'content.get_state': [
-        'getInfoFor',
+        'getInfoFor(',
     ],
     'content.transition': [
-        'doActionFor',
+        'doActionFor(',
     ],
     'content.get_view': [
         None,
     ],
     'content.get_uuid': [
-        'IUUID',
+        'IUUID(',
     ],
     'content.find': [
-        '.catalog',
-        'searchResults',
+        '.catalog(',
+        'searchResults(',
     ],
     'user.create': [
-        'addMember',
+        'addMember(',
     ],
     'user.get': [
-        'getMemberById',
-        'get_member_by_login_name',
+        'getMemberById(',
+        'get_member_by_login_name(',
     ],
     'user.get_current': [
-        'getAuthenticatedMember',
+        'getAuthenticatedMember(',
     ],
     'user.get_users': [
-        'listMembers',
-        'getGroupMembers',
+        'listMembers(',
+        'getGroupMembers(',
     ],
     'user.delete': [
-        'deleteMembers',
+        'deleteMembers(',
     ],
     'user.is_anonymous': [
-        'isAnonymousUser',
+        'isAnonymousUser(',
     ],
     'user.get_roles': [
-        'getRolesInContext',
-        'getRoles',
-        'get_local_roles_for_userid',
+        'getRolesInContext(',
+        'getRoles(',
+        'get_local_roles_for_userid(',
     ],
     'user.get_permissions': [
-        'checkPermission',
+        'checkPermission(',
     ],
     'user.has_permission': [
-        'checkPermission',
+        'checkPermission(',
     ],
     'user.grant_roles': [
-        'setSecurityProfile',
-        'manage_setLocalRoles',
+        'setSecurityProfile(',
+        'manage_setLocalRoles(',
     ],
     'user.revoke_roles': [
-        'setSecurityProfile',
-        'manage_setLocalRoles',
-        'manage_delLocalRoles',
+        'setSecurityProfile(',
+        'manage_setLocalRoles(',
+        'manage_delLocalRoles(',
     ],
     'group.create': [
-        'addGroup',
+        'addGroup(',
     ],
     'group.get': [
-        'getGroupById',
+        'getGroupById(',
     ],
     'group.get_groups': [
-        'getGroupsForPrincipal',
-        'listGroups',
+        'getGroupsForPrincipal(',
+        'listGroups(',
     ],
     'group.delete': [
-        'removeGroup',
+        'removeGroup(',
     ],
     'group.add_user': [
-        'addPrincipalToGroup',
+        'addPrincipalToGroup(',
     ],
     'group.remove_user': [
-        'removePrincipalFromGroup',
+        'removePrincipalFromGroup(',
     ],
     'group.get_roles': [
-        'getRoles',
-        'getRolesInContext',
+        'getRoles(',
+        'getRolesInContext(',
     ],
     'group.grant_roles': [
-        'setRolesForGroup',
-        'manage_setLocalRoles',
+        'setRolesForGroup(',
+        'manage_setLocalRoles(',
     ],
     'group.revoke_roles': [
-        'setRolesForGroup',
-        'manage_setLocalRoles',
-        'manage_delLocalRoles',
+        'setRolesForGroup(',
+        'manage_setLocalRoles(',
+        'manage_delLocalRoles(',
     ],
     'portal.get': [
-        'getSite',
+        'getSite(',
     ],
     'portal.get_navigation_root': [
-        'getNavigationRootObject',
+        'getNavigationRootObject(',
     ],
     'portal.get_tool': [
-        'getToolByName',
+        'getToolByName(',
     ],
     'portal.send_email': [
         None,
     ],
     'portal.get_localized_time': [
-        'ulocalized_time',
+        'ulocalized_time(',
     ],
     'portal.show_message': [
-        'IStatusMessage',
+        'IStatusMessage(',
     ],
     'portal.get_registry_record': [
-        'IRegistry',
+        'IRegistry(',
     ],
     'portal.set_registry_record': [
-        'IRegistry',
+        'IRegistry(',
     ],
     'env.adopt_user': [
-        'setSecurityManager',
-        'getSecurityManager',
-        'newSecurityManager',
+        'setSecurityManager(',
+        'getSecurityManager(',
+        'newSecurityManager(',
     ],
     'env.adopt_roles': [
-        'getSecurityManager',
+        'getSecurityManager(',
     ],
     'env.debug_mode': [
-        'DevelopmentMode',
+        'DevelopmentMode(',
     ],
     'env.test_mode': [
         None,
