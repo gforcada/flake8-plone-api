@@ -39,7 +39,7 @@ setup(
     license='GPL version 2',
     py_modules=['flake8_plone_api', ],
     include_package_data=True,
-    test_suite = 'run_tests',
+    test_suite='run_tests',
     zip_safe=False,
     install_requires=[
         'flake8',
