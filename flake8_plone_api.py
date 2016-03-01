@@ -334,6 +334,24 @@ DATA = {
             '.forInterface(',
         ],
     },
+    'portal.translate': {
+        'since': '1.5',
+        'replace': [
+            '.utranslate(',
+        ],
+    },
+    'portal.get_default_language': {
+        'since': '1.5',
+        'replace': [
+            'default_language',
+        ],
+    },
+    'portal.get_current_language': {
+        'since': '1.5',
+        'replace': [
+            '.Language(',
+        ],
+    },
     'env.adopt_user': {
         'since': '1.0',
         'replace': [
