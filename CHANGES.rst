@@ -3,7 +3,7 @@
 Changelog
 =========
 
-0.7 (unreleased)
+1.0 (2016-03-01)
 ----------------
 
 - Report which version of plone.api is needed to be able to apply
