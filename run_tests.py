@@ -102,6 +102,20 @@ class TestFlake8PloneAPI(unittest.TestCase):
         ret = list(checker.run())
         self.assertEqual(ret, [])
 
+    def test_version(self):
+        file_path = self._given_a_file_in_test_dir(
+            'from plone import searchResults\n'
+            '\n'
+            'searchResults(3)\n'
+        )
+        checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
+        self.assertEqual(len(ret), 1)
+        self.assertEqual(ret[0][0], 3)
+        self.assertEqual(ret[0][1], 0)
+        self.assertTrue(ret[0][2].startswith('P001 found '))
+        self.assertIn('1.3.3', ret[0][2])
+
 
 if __name__ == '__main__':
     unittest.main()
