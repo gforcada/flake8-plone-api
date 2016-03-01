@@ -6,8 +6,12 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Report which version of plone.api is needed to be able to apply
+  each suggested replacement.
+  [gforcada]
 
+- Add methods from plone.api 1.5.
+  [gforcada]
 
 0.6 (2015-10-06)
 ----------------
