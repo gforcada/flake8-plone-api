@@ -93,7 +93,7 @@ DATA = {
     'content.get': {
         'since': '1.0',
         'replace': [
-            'restrictedTraverse(',
+            None,
         ],
     },
     'content.move': {
