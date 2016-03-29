@@ -3,7 +3,7 @@
 Changelog
 =========
 
-1.1 (unreleased)
+1.1 (2016-03-29)
 ----------------
 
 - Remove ``restrictedTraverse`` as a suggestion to be replaced with get_view,
