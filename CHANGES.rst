@@ -6,8 +6,9 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Remove ``restrictedTraverse`` as a suggestion to be replaced with get_view,
+  there are way too many false positives.
+  [gforcada]
 
 1.0 (2016-03-01)
 ----------------
