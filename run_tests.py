@@ -52,7 +52,7 @@ class TestFlake8PloneAPI(unittest.TestCase):
 
     def test_get_replacement_within_the_line(self):
         file_path = self._given_a_file_in_test_dir(
-            'from plone import api\ntool = getToolByName()'
+            'from plone import api\ntool = getToolByName(text)'
         )
         checker = PloneAPIChecker(None, file_path)
         ret = list(checker.run())
