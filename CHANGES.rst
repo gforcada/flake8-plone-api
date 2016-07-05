@@ -3,6 +3,12 @@
 Changelog
 =========
 
+1.3 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 1.2 (2016-07-05)
 ----------------
 - Fix the logic to report if a line has a replacement needed.
