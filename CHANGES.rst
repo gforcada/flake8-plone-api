@@ -3,7 +3,7 @@
 Changelog
 =========
 
-1.2 (unreleased)
+1.2 (2016-07-05)
 ----------------
 - Fix the logic to report if a line has a replacement needed.
   Before the internal data got a parenthesis at the end there was some extra logic checking for end of line or a next character.
