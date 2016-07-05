@@ -5,20 +5,20 @@ Changelog
 
 1.2 (unreleased)
 ----------------
-
-- Nothing changed yet.
-
+- Fix the logic to report if a line has a replacement needed.
+  Before the internal data got a parenthesis at the end there was some extra logic checking for end of line or a next character.
+  But since some time ago a parenthesis was added as well,
+  which made some checkers never report (namely getToolByName and probably lots more).
+  [gforcada]
 
 1.1 (2016-03-29)
 ----------------
-
 - Remove ``restrictedTraverse`` as a suggestion to be replaced with get_view,
   there are way too many false positives.
   [gforcada]
 
 1.0 (2016-03-01)
 ----------------
-
 - Report which version of plone.api is needed to be able to apply
   each suggested replacement.
   [gforcada]
@@ -28,11 +28,9 @@ Changelog
 
 0.6 (2015-10-06)
 ----------------
-
 - Instead of looking for catalog, look for .catalog, this
   should avoid some false positives
   [do3cc]
-
 
 0.5 (2015-08-17)
 ----------------
