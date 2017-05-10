@@ -11,7 +11,6 @@ long_description = '{0}\n{1}'.format(
     open('CHANGES.rst').read()
 )
 
-
 setup(
     name='flake8-plone-api',
     version='1.4.dev0',
@@ -29,6 +28,8 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Software Development',
     ],
@@ -45,6 +46,8 @@ setup(
         'flake8',
     ],
     entry_points={
-        'flake8.extension': ['P00 = flake8_plone_api:PloneAPIChecker'],
+        'flake8.extension': [
+            'P001 = flake8_plone_api:PloneAPIChecker',
+        ],
     },
 )
