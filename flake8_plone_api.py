@@ -2,9 +2,15 @@
 from collections import defaultdict
 
 
+try:
+    from flake8.engine import pep8 as stdin_utils
+except ImportError:
+    from flake8 import utils as stdin_utils
+
+
 class PloneAPIChecker(object):
     name = 'flake8_plone_api'
-    version = '0.1'
+    version = '1.3'
     message = 'P001 found "{0}" consider replacing it with: {1} ' \
               '(since plone.api version {2})'
 
@@ -13,20 +19,23 @@ class PloneAPIChecker(object):
         self.mapping = PloneAPIChecker._get_mapping()
 
     def run(self):
-        with open(self.filename) as f:
-            lines = f.readlines()
+        if self.filename == 'stdin':
+            lines = stdin_utils.stdin_get_value().splitlines(True)
+        else:
+            with open(self.filename) as f:
+                lines = f.readlines()
 
-            for lineno, line in enumerate(lines, start=1):
-                for old_approach in self.mapping['data']:
-                    found = self.check_line(line, old_approach)
-                    if found != -1:
-                        new = self.mapping['data'][old_approach]
-                        msg = self.message.format(
-                            old_approach,
-                            ' or '.join(new),
-                            self.mapping['since'][new[0]]
-                        )
-                        yield lineno, found, msg, type(self)
+        for lineno, line in enumerate(lines, start=1):
+            for old_approach in self.mapping['data']:
+                found = self.check_line(line, old_approach)
+                if found != -1:
+                    new = self.mapping['data'][old_approach]
+                    msg = self.message.format(
+                        old_approach,
+                        ' or '.join(new),
+                        self.mapping['since'][new[0]],
+                    )
+                    yield lineno, found, msg, type(self)
 
     def check_line(self, line, old_approach):
         return line.find(old_approach)
