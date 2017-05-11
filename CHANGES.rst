@@ -5,10 +5,11 @@ Changelog
 
 1.3 (unreleased)
 ----------------
-
 - added support for sublimetext (stdin/filename handling)
   [iham]
 
+- Fixed false positive "default_language" string match. (issue #17)
+  [iham]
 
 1.2 (2016-07-05)
 ----------------
