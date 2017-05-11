@@ -332,7 +332,6 @@ DATA = {
     'portal.get_default_language': {
         'since': '1.5',
         'replace': [
-            'default_language',
             '.default_language(',
             ' default_language('
         ],
