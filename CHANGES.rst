@@ -9,6 +9,8 @@ Changelog
 - added support for sublimetext (stdin/filename handling)
   [iham]
 
+- Release universal wheels.
+  [gforcada]
 
 1.2 (2016-07-05)
 ----------------
