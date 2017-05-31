@@ -3,6 +3,12 @@
 Changelog
 =========
 
+1.5 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 1.4 (2017-05-31)
 ----------------
 - Fixed false positive "default_language" string match. (issue #17)
