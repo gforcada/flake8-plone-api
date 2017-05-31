@@ -11,7 +11,6 @@ long_description = '{0}\n{1}'.format(
     open('CHANGES.rst').read()
 )
 
-
 setup(
     name='flake8-plone-api',
     version='1.4.dev0',
@@ -19,7 +18,7 @@ setup(
     long_description=long_description,
     # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Framework :: Plone',
         'Framework :: Plone :: 4.3',
         'Framework :: Plone :: 5.0',
@@ -29,7 +28,7 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Software Development',
     ],
     keywords='pep8 flake8 plone',
@@ -45,6 +44,8 @@ setup(
         'flake8',
     ],
     entry_points={
-        'flake8.extension': ['P00 = flake8_plone_api:PloneAPIChecker'],
+        'flake8.extension': [
+            'P001 = flake8_plone_api:PloneAPIChecker',
+        ],
     },
 )

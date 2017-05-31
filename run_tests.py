@@ -3,6 +3,7 @@ from flake8_plone_api import PloneAPIChecker
 from tempfile import mkdtemp
 
 import os
+import mock
 import unittest
 
 
@@ -109,6 +110,24 @@ class TestFlake8PloneAPI(unittest.TestCase):
             'searchResults(3)\n'
         )
         checker = PloneAPIChecker(None, file_path)
+        ret = list(checker.run())
+        self.assertEqual(len(ret), 1)
+        self.assertEqual(ret[0][0], 3)
+        self.assertEqual(ret[0][1], 0)
+        self.assertTrue(ret[0][2].startswith('P001 found '))
+        self.assertIn('1.3.3', ret[0][2])
+
+    @mock.patch('flake8_plone_api.stdin_utils.stdin_get_value')
+    def test_stdin(self, stdin_get_value):
+        stdin_value = mock.Mock()
+        stdin_value.splitlines.return_value = [
+            'from plone import searchResults\n',
+            '\n',
+            'searchResults(3)\n',
+        ]
+        stdin_get_value.return_value = stdin_value
+
+        checker = PloneAPIChecker(None, 'stdin')
         ret = list(checker.run())
         self.assertEqual(len(ret), 1)
         self.assertEqual(ret[0][0], 3)
