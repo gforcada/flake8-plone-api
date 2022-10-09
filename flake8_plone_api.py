@@ -1,9 +1,6 @@
 from collections import defaultdict
 
-try:
-    from flake8.engine import pep8 as stdin_utils
-except ImportError:
-    from flake8 import utils as stdin_utils
+from flake8 import utils as stdin_utils
 
 
 class PloneAPIChecker:
