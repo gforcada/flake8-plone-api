@@ -13,7 +13,7 @@ class PloneAPIChecker:
 
     def __init__(self, tree, filename):
         self.filename = filename
-        self.mapping = PloneAPIChecker._get_mapping()
+        self.mapping = self._get_mapping()
 
     def run(self):
         if self.filename == 'stdin':
@@ -59,7 +59,7 @@ class PloneAPIChecker:
         for api_method in DATA:
             method_call = f'plone.api.{api_method}'
             for old_approach in DATA[api_method]['replace']:
-                # do not add the empty entries
+                # do not add empty entries
                 if old_approach is None:
                     continue
                 mapping['data'][old_approach].append(method_call)
