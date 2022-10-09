@@ -6,8 +6,11 @@ Changelog
 1.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Pin dependencies. [gforcada]
 
+- Test//QA with GitHub actions. [gforcada]
+
+- Overhaul testing. [gforcada]
 
 1.4 (2017-05-31)
 ----------------
