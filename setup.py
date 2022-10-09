@@ -1,6 +1,8 @@
 from setuptools import setup
 
-short_description = 'Checks for code usages that can be replaced with Plone API method calls.'
+short_description = (
+    'Checks for code usages that can be replaced with Plone API method calls.'
+)
 
 
 def read_file(filename):
@@ -47,21 +49,11 @@ setup(
     author_email='gil.gnome@gmail.com',
     url='https://github.com/gforcada/flake8-plone-api',
     license='GPL version 2',
-    py_modules=['flake8_plone_api', ],
+    py_modules=['flake8_plone_api'],
     include_package_data=True,
     test_suite='run_tests',
     zip_safe=False,
-    install_requires=[
-        'flake8'
-    ],
-    extras_require={
-        'test': [
-            'pytest'
-        ]
-    },
-    entry_points={
-        'flake8.extension': [
-            'P001 = flake8_plone_api:PloneAPIChecker'
-        ],
-    },
+    install_requires=['flake8'],
+    extras_require={'test': ['pytest']},
+    entry_points={'flake8.extension': ['P001 = flake8_plone_api:PloneAPIChecker']},
 )

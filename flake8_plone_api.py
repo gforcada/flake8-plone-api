@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 from collections import defaultdict
-
 
 try:
     from flake8.engine import pep8 as stdin_utils
@@ -8,11 +6,13 @@ except ImportError:
     from flake8 import utils as stdin_utils
 
 
-class PloneAPIChecker(object):
+class PloneAPIChecker:
     name = 'flake8_plone_api'
     version = '1.3'
-    message = 'P001 found "{0}" consider replacing it with: {1} ' \
-              '(since plone.api version {2})'
+    message = (
+        'P001 found "{0}" consider replacing it with: {1} '
+        '(since plone.api version {2})'
+    )
 
     def __init__(self, tree, filename):
         self.filename = filename
@@ -60,7 +60,7 @@ class PloneAPIChecker(object):
         }
 
         for api_method in DATA:
-            method_call = 'plone.api.{0}'.format(api_method)
+            method_call = f'plone.api.{api_method}'
             for old_approach in DATA[api_method]['replace']:
                 # do not add the empty entries
                 if old_approach is None:
@@ -331,10 +331,7 @@ DATA = {
     },
     'portal.get_default_language': {
         'since': '1.5',
-        'replace': [
-            '.default_language(',
-            ' default_language('
-        ],
+        'replace': ['.default_language(', ' default_language('],
     },
     'portal.get_current_language': {
         'since': '1.5',
