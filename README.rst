@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
 
-.. image:: https://travis-ci.org/gforcada/flake8-plone-api.svg?branch=master
-   :target: https://travis-ci.org/gforcada/flake8-plone-api
+.. image:: https://github.com/gforcada/flake8-plone-api/actions/workflows/testing.yml/badge.svg?branch=master
+   :target: https://github.com/gforcada/flake8-plone-api/actions/workflows/testing.yml
 
-.. image:: https://coveralls.io/repos/gforcada/flake8-plone-api/badge.svg?branch=master&service=github
+.. image:: https://coveralls.io/repos/gforcada/flake8-plone-api/badge.svg?branch=master
    :target: https://coveralls.io/github/gforcada/flake8-plone-api?branch=master
 
 Flake8 Plone API plugin
@@ -21,7 +21,7 @@ Install with pip::
 
 Requirements
 ------------
-- Python 2.7, 3.5
+- Python 3.7, 3.8, 3.9, 3.10 and pypy3
 - flake8
 
 License
