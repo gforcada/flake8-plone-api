@@ -19,7 +19,7 @@ long_description = f"""
 
 setup(
     name='flake8-plone-api',
-    version='1.5.dev0',
+    version='1.5.0',
     description=short_description,
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
