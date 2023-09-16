@@ -6,8 +6,8 @@ Changelog
 1.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Drop python 3.7 support.
+  [gforcada]
 
 1.5.0 (2022-10-09)
 ------------------
