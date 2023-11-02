@@ -1,8 +1,8 @@
-import os
-import textwrap
+from flake8_plone_api import PloneAPIChecker
 from unittest import mock
 
-from flake8_plone_api import PloneAPIChecker
+import os
+import textwrap
 
 
 def write_python_file(tmpdir, content):
