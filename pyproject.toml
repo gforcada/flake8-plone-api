@@ -46,3 +46,16 @@ test = ["pytest"]
 
 [project.entry-points."flake8.extension"]
 P001 = "flake8_plone_api:PloneAPIChecker"
+
+[tool.isort]
+profile = "plone"
+
+[tool.black]
+target-version = ["py38"]
+skip-string-normalization = true
+
+[tool.check-manifest]
+ignore = [
+    ".vscode/*",
+    "venv/*",
+]
