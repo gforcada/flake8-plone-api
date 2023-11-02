@@ -1,5 +1,4 @@
 from collections import defaultdict
-
 from flake8 import utils as stdin_utils
 
 
