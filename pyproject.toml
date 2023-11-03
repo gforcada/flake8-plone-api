@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "flake8-plone-api"
-version = "1.5.1.dev0"
+version = "1.6.0"
 authors = [
   { name="Gil Forcada Codinachs", email="gil.gnome@gmail.com" },
 ]
