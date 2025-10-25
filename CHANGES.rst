@@ -3,7 +3,7 @@
 Changelog
 =========
 
-1.6.1 (unreleased)
+2.0.0 (2025-10-25)
 ------------------
 
 - Drop python 3.8 and add python 3.13.
